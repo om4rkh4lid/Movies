@@ -24,7 +24,7 @@ class AFDetailApiService: DetailApiService {
         
         AF.request(endpoint, method: .post, parameters: body, encoding: JSONEncoding(), headers: headers).validate().response{ res in
             switch res.result {
-            case .success(let _):
+            case .success(_):
                 DispatchQueue.main.async {
                     completion(.success(Success()))
                 }
